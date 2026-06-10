@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gamasì | Sala eventi per cerimonie, battesimi, comunioni e lauree</title>
+    <meta
+      name="description"
+      content="Cerchi una sala eventi per battesimi, comunioni, cresime o lauree? Gamasì è una location privata, elegante e personalizzabile. Compila il form e richiedi informazioni."
+    />
+    <meta
+      name="keywords"
+      content="sala eventi per cerimonie, location per battesimi, sala per comunioni, sala per cresime, sala per festa di laurea, location cerimonie private, sala eventi Gamasì"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Work+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="nav-wrap">
+        <a class="brand" href="index.html">
+          <img src="img/logo.jpg" alt="Logo Gamasì" />
+          <span>Gamasì</span>
+        </a>
+        <nav class="site-nav" aria-label="Navigazione principale">
+          <a href="cerimonie.html" class="active">Cerimonie</a>
+          <a href="compleanni.html">Compleanni</a>
+          <a href="feste.html">Feste private</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <span class="kicker">Sala eventi per cerimonie</span>
+          <h1>Gamasì, sala eventi per cerimonie, battesimi, comunioni, cresime e lauree</h1>
+          <p>
+            Uno spazio privato per vivere la tua cerimonia con calma, cura e libertà. Compila il
+            form e raccontaci cosa hai in mente.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#form-cerimonie">Richiedi informazioni per la tua cerimonia</a>
+            <a class="btn btn-secondary" href="https://www.instagram.com/gamasievents" target="_blank" rel="noopener">Prenota un sopralluogo su Instagram</a>
+          </div>
+        </div>
+        <aside class="hero-card">
+          <h2>Ideale per</h2>
+          <ul>
+            <li>Battesimi</li>
+            <li>Prime comunioni</li>
+            <li>Cresime</li>
+            <li>Feste di laurea</li>
+            <li>Pranzi o cene dopo la cerimonia</li>
+          </ul>
+        </aside>
+      </section>
+
+      <section class="section">
+        <h2>Una location elegante ma senza formalismi inutili</h2>
+        <p>
+          Quando organizzi una cerimonia, non cerchi solo una sala bella. Cerchi un posto in cui
+          gli ospiti possano stare bene, in cui la famiglia possa riunirsi senza confusione e in
+          cui ogni dettaglio abbia senso rispetto all'occasione.
+        </p>
+        <p>
+          Ogni evento puo avere un tono diverso: piu intimo, piu scenografico, piu formale o piu
+          conviviale. Per questo il primo passo e raccontarci la tua idea.
+        </p>
+      </section>
+
+      <section class="panel-grid">
+        <article class="panel">
+          <h3>Una sala riservata solo ai tuoi invitati</h3>
+          <p>
+            Vivi la giornata con piu intimita, senza il passaggio continuo di persone estranee o
+            il rumore di altri tavoli.
+          </p>
+        </article>
+        <article class="panel">
+          <h3>Piu controllo sull'organizzazione</h3>
+          <p>
+            Tavoli, angolo torta, confettata, buffet, spazio per bambini e area foto: la sala si
+            adatta alla tua cerimonia.
+          </p>
+        </article>
+        <article class="panel">
+          <h3>Proposta costruita sulle tue esigenze</h3>
+          <p>
+            Numero invitati, data, budget e stile vengono valutati per offrirti indicazioni utili,
+            non un pacchetto standard.
+          </p>
+        </article>
+      </section>
+
+      <section class="section">
+        <h2>Immagina la tua cerimonia da Gamasì</h2>
+        <p>
+          Ospiti accolti senza fretta, tavoli pronti, famiglia riunita e un ritmo sereno per ogni
+          momento della giornata. Le date piu richieste tendono a concentrarsi nei weekend: se hai
+          gia un periodo in mente, conviene verificare la disponibilita in anticipo.
+        </p>
+      </section>
+
+      <section id="form-cerimonie" class="section">
+        <span class="kicker">CTA form</span>
+        <h2>Invia la richiesta per la tua cerimonia</h2>
+        <form class="form-grid">
+          <div>
+            <label for="nome-cer">Nome e cognome</label>
+            <input id="nome-cer" name="nome-cer" type="text" />
+          </div>
+          <div>
+            <label for="telefono-cer">Telefono</label>
+            <input id="telefono-cer" name="telefono-cer" type="tel" />
+          </div>
+          <div>
+            <label for="email-cer">E-mail</label>
+            <input id="email-cer" name="email-cer" type="email" />
+          </div>
+          <div>
+            <label for="tipo-cer">Tipo di cerimonia</label>
+            <select id="tipo-cer" name="tipo-cer">
+              <option>Battesimo</option>
+              <option>Comunione</option>
+              <option>Cresima</option>
+              <option>Laurea</option>
+              <option>Altro</option>
+            </select>
+          </div>
+          <div>
+            <label for="data-cer">Data indicativa</label>
+            <input id="data-cer" name="data-cer" type="text" />
+          </div>
+          <div>
+            <label for="partecipanti-cer">Numero previsto di invitati</label>
+            <input id="partecipanti-cer" name="partecipanti-cer" type="number" min="1" />
+          </div>
+          <div class="full">
+            <label for="preferenza-cer">Preferisci ricevere un preventivo o prenotare un sopralluogo?</label>
+            <input id="preferenza-cer" name="preferenza-cer" type="text" />
+          </div>
+          <div class="full">
+            <label for="messaggio-cer">Messaggio</label>
+            <textarea id="messaggio-cer" name="messaggio-cer"></textarea>
+          </div>
+          <div class="full">
+            <button class="btn btn-primary" type="button">Invia la richiesta per la tua cerimonia</button>
+          </div>
+        </form>
+        <p class="microcopy">
+          Ti ricontatteremo per aiutarti a capire se Gamasì e adatta al tuo evento, senza alcun
+          impegno.
+        </p>
+      </section>
+
+      <section class="instagram">
+        <p>
+          Segui <strong>@gamasievents</strong> su Instagram per vedere allestimenti e atmosfera
+          reale della sala.
+        </p>
+        <a class="btn btn-secondary" href="https://www.instagram.com/gamasievents" target="_blank" rel="noopener">Visita il profilo</a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <span>Gamasì - Cerimonie private ed eventi familiari</span>
+        <span><a href="https://www.instagram.com/gamasievents" target="_blank" rel="noopener">Instagram</a></span>
+      </div>
+    </footer>
+  </body>
+</html>
