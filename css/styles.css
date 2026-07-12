@@ -21,7 +21,7 @@ body {
 }
 
 body {
-  font-family: "Comic Sans MS";
+  font-family: "DM Serif Display";
   color: var(--espresso);
   background:
     radial-gradient(circle at 12% 18%, rgba(181, 121, 82, 0.12), transparent 40%),
@@ -69,7 +69,7 @@ a {
 }
 
 .brand span {
-  font-family: "Comic Sans MS";
+  font-family: "DM Serif Display";
   font-size: 2rem;
   letter-spacing: 0.03em;
   font-weight: 600;
@@ -116,7 +116,7 @@ main {
 }
 
 .hero h1 {
-  font-family: "Comic Sans MS";
+  font-family: "DM Serif Display";
   font-size: clamp(2rem, 4vw, 3.3rem);
   line-height: 1.07;
   margin: 0 0 12px;
@@ -214,7 +214,7 @@ main {
 .section h2 {
   margin-top: 0;
   margin-bottom: 12px;
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: "DM Serif Display";
   font-size: clamp(1.6rem, 3.2vw, 2.25rem);
 }
 
