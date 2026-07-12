@@ -69,7 +69,7 @@ a {
 }
 
 .brand span {
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: "Comic Sans MS";
   font-size: 2rem;
   letter-spacing: 0.03em;
   font-weight: 600;
@@ -116,7 +116,7 @@ main {
 }
 
 .hero h1 {
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: "Comic Sans MS";
   font-size: clamp(2rem, 4vw, 3.3rem);
   line-height: 1.07;
   margin: 0 0 12px;
