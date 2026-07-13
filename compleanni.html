@@ -108,20 +108,23 @@
       </section>
 
       <section id="form-compleanni" class="section">
-        <span class="kicker">CTA form</span>
         <h2>Verifica disponibilità per il tuo compleanno</h2>
-        <form class="form-grid">
+        <form id="compleanni-form" class="form-grid" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="eebf0803-9bae-4f24-abff-aa39548db2c0" />
+          <input type="hidden" name="subject" value="Nuova richiesta compleanno - Sito Gamasì" />
+          <input type="hidden" name="from_name" value="Form Compleanni Gamasì" />
+          <input type="checkbox" name="botcheck" style="display: none" />
           <div>
-            <label for="nome-comp">Nome e cognome</label>
-            <input id="nome-comp" name="nome-comp" type="text" />
+            <label for="nome-comp">Nome e cognome *</label>
+            <input id="nome-comp" name="nome-comp" type="text" required />
           </div>
           <div>
-            <label for="telefono-comp">Telefono</label>
-            <input id="telefono-comp" name="telefono-comp" type="tel" />
+            <label for="telefono-comp">Telefono *</label>
+            <input id="telefono-comp" name="telefono-comp" type="tel" required />
           </div>
           <div>
-            <label for="email-comp">E-mail</label>
-            <input id="email-comp" name="email-comp" type="email" />
+            <label for="email-comp">E-mail *</label>
+            <input id="email-comp" name="email-comp" type="email" required />
           </div>
           <div>
             <label for="data-comp">Data desiderata</label>
@@ -148,13 +151,16 @@
             <textarea id="messaggio-comp" name="messaggio-comp"></textarea>
           </div>
           <div class="full">
-            <button class="btn btn-primary" type="button">Verifica disponibilita per il tuo compleanno</button>
+            <button id="compleanni-submit" class="btn btn-primary" type="submit" disabled>
+              Verifica disponibilita per il tuo compleanno
+            </button>
           </div>
         </form>
         <p class="microcopy">
           Ti risponderemo con le informazioni utili per valutare disponibilita, formula e
           organizzazione della festa.
         </p>
+        <div id="compleanni-toast" class="toast" role="status" aria-live="polite"></div>
       </section>
 
       <section class="instagram">
@@ -171,5 +177,78 @@
         <span><a href="https://www.instagram.com/gamasievents" target="_blank" rel="noopener">Instagram</a></span>
       </div>
     </footer>
+    <script>
+      (function () {
+        const form = document.getElementById("compleanni-form");
+        const submitButton = document.getElementById("compleanni-submit");
+        const nomeInput = document.getElementById("nome-comp");
+        const telefonoInput = document.getElementById("telefono-comp");
+        const emailInput = document.getElementById("email-comp");
+        const toast = document.getElementById("compleanni-toast");
+        let toastTimer;
+
+        if (!form || !submitButton || !nomeInput || !telefonoInput || !emailInput || !toast) return;
+
+        function updateSubmitState() {
+          const isReady =
+            nomeInput.value.trim() !== "" &&
+            telefonoInput.value.trim() !== "" &&
+            emailInput.value.trim() !== "";
+
+          submitButton.disabled = !isReady;
+        }
+
+        function showToast(message, type) {
+          toast.textContent = message;
+          toast.classList.remove("is-success", "is-error", "is-visible");
+          toast.classList.add(type === "success" ? "is-success" : "is-error");
+          toast.classList.add("is-visible");
+
+          window.clearTimeout(toastTimer);
+          toastTimer = window.setTimeout(function () {
+            toast.classList.remove("is-visible");
+          }, 5200);
+        }
+
+        nomeInput.addEventListener("input", updateSubmitState);
+        telefonoInput.addEventListener("input", updateSubmitState);
+        emailInput.addEventListener("input", updateSubmitState);
+        updateSubmitState();
+
+        form.addEventListener("submit", async function (event) {
+          event.preventDefault();
+
+          const defaultText = submitButton.textContent;
+          submitButton.disabled = true;
+          submitButton.textContent = "Invio in corso...";
+
+          try {
+            const formData = new FormData(form);
+            const response = await fetch(form.action, {
+              method: "POST",
+              body: formData,
+              headers: {
+                Accept: "application/json",
+              },
+            });
+
+            const result = await response.json();
+
+            if (response.ok && result.success) {
+              showToast("Richiesta inviata con successo! Ti ricontatteremo al più presto.", "success");
+              form.reset();
+            } else {
+              showToast("Invio non riuscito. Riprova tra poco.", "error");
+            }
+          } catch (error) {
+            showToast("Errore di connessione. Controlla la rete e riprova.", "error");
+          } finally {
+            submitButton.disabled = false;
+            submitButton.textContent = defaultText;
+            updateSubmitState();
+          }
+        });
+      })();
+    </script>
   </body>
 </html>
