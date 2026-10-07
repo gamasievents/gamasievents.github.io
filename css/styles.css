@@ -478,6 +478,34 @@ textarea {
   cursor: pointer;
 }
 
+.whatsapp-fab {
+  position: fixed;
+  left: 14px;
+  bottom: 14px;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #25d366;
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(37, 211, 102, 0.45);
+  z-index: 68;
+}
+
+.whatsapp-fab:hover,
+.whatsapp-fab:focus-visible {
+  transform: translateY(-1px);
+  filter: brightness(0.96);
+}
+
+.whatsapp-fab svg {
+  width: 30px;
+  height: 30px;
+  display: block;
+}
+
 .instagram {
   margin-top: 34px;
   background: linear-gradient(120deg, #fff5e8, #fff);
@@ -617,5 +645,12 @@ textarea {
 
   .cookie-banner__actions .btn {
     width: 100%;
+  }
+
+  .whatsapp-fab {
+    width: 54px;
+    height: 54px;
+    left: 10px;
+    bottom: 10px;
   }
 }
